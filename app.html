@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <p id="tela"></p>
+        
+        <div id="botoes">
+            <button type="button" onclick="colocar('7')">7</button>
+            <button type="button" onclick="colocar('8')">8</button>
+            <button type="button" onclick="colocar('9')">9</button>
+            <button type="button" onclick="colocar('/')">/</button>
+            <button type="button" onclick="colocar('4')">4</button>
+            <button type="button" onclick="colocar('5')">5</button>
+            <button type="button" onclick="colocar('6')">6</button>
+            <button type="button" onclick="colocar('*')">X</button>
+            <button type="button" onclick="colocar('1')">1</button>
+            <button type="button" onclick="colocar('2')">2</button>
+            <button type="button" onclick="colocar('3')">3</button>
+            <button type="button" onclick="colocar('-')">-</button>
+            <button type="button" onclick="colocar('0')">0</button>
+            <button type="button" onclick="calc()">=</button>
+            <button type="button" onclick="colocar('.')">.</button>
+            <button type="button" onclick="colocar('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+
+        let tela = document.querySelector('#tela'); 
+
+        function colocar(num){
+            tela.textContent += num; 
+        }
+
+        function calc(){
+            let operacao = tela.textContent;
+            let resultado = eval(operacao);
+            tela.textContent = resultado;
+        }
+
+    </script>
+
+</body>
+</html>
